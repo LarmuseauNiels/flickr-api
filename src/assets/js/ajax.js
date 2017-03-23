@@ -47,7 +47,7 @@ var flickrajax = function (gegevens, callback){
         dataType: "json"
     }).done(function (data, textStatus, jqXHR) {
         //console.log(data);
-        if (data.stat == "ok") {
+        if (data.stat === "ok") {
             callback(data);
         }
         else {
