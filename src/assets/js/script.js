@@ -20,16 +20,27 @@ var toonzoekresultaten = function (data) {
 };
 
 var toondetailpagina = function (data) {
-
     var image = data.photo;
+    var content = $('.content');
+    //console.log(image);
     var html = getphotohtml(image,"z");
-    $('.content').html(html);
+    html += "<p>title: "+image.title._content+"</p>" ;
+    html += "<p>author: "+image.owner.realname+"</p>";
+    html += "<button class='.location'>see location</button>";
+    html += "<button class='.author'>more from author</button>";
+    content.html(html);
+    $('header').html("<button class='.back'>back</button>");
 };
 
 var detailpagina = function (e) {
     e.preventDefault();
-    console.log($(this).data("photoid"));
+    //console.log($(this).data("photoid"));
     getimageinfo($(this).data("photoid"), toondetailpagina);
+};
+
+var goback = function (e) {
+  e.preventDefault();
+  getimages("tower", toonzoekresultaten);
 };
 
 $(document).ready(function () {
