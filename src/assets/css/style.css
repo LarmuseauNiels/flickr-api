@@ -19,14 +19,44 @@ header{
     height: 25px;
     font-size: 1.2rem;
 }
-#search{
+
+button{
+    font-size: 1.2rem;
+    height: 30px;
+    background-color: #EBF2FA;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    margin-top: 0;
+}
+
+img{
+    padding: 2px;
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+/*------------------------*/
+/*   SPECIFIC ELEMENTS    */
+/*------------------------*/
+h1{
+    text-align: center;
+}
+
+.back{
+    width: 15%;
+}
+h1,#search{
     float: left;
     width: 84%;
     height: 100%;
     border: solid 2px #05668D;
     border-radius: 5px;
+    background-color: #EBF2FA;
 }
-#searchbutton{
+.back,#searchbutton{
     float: right;
     width: 15%;
     margin-right: 0;
@@ -38,25 +68,4 @@ header{
     margin-top: 50px;
     text-align: center;
 }
-img{
-    padding: 2px;
-}
 
-/*------------------------*/
-/*   SPECIFIC ELEMENTS    */
-/*------------------------*/
-button{
-    font-size: 1.2rem;
-    height: 30px;
-    background-color: #EBF2FA;
-    border-radius: 5px;
-    border: none;
-    margin-right: 10px;
-}
-.author{
-    display: block;
-}
-
-/*---------------------*/
-/*   GENERAL CLASSES   */
-/*---------------------*/

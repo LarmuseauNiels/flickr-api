@@ -2,6 +2,7 @@
  * Created by niels on 3/16/2017.
  *
  */
+
 var getimages = function (zoekterm, callback) {
     var gegevens = {
         method: "flickr.photos.search",
@@ -16,7 +17,22 @@ var getimageinfo = function (photoid,callback) {
       method: "flickr.photos.getInfo",
       photo_id: photoid
   };
-    console.log("succes 01");
+    flickrajax(gegevens,callback);
+};
+
+var getimagelocation = function (photoid,callback) {
+    var gegevens = {
+        method: "flickr.photos.geo.getLocation",
+        photo_id: photoid
+    };
+    flickrajax(gegevens,callback);
+};
+
+var getimagesfromuser = function (userid,callback) {
+    var gegevens = {
+        method: "flickr.people.getPublicPhotos",
+        user_id: userid
+    };
     flickrajax(gegevens,callback);
 };
 
@@ -32,7 +48,6 @@ var flickrajax = function (gegevens, callback){
     }).done(function (data, textStatus, jqXHR) {
         //console.log(data);
         if (data.stat == "ok") {
-            console.log("succes 02");
             callback(data);
         }
         else {
