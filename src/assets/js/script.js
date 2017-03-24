@@ -2,6 +2,8 @@
  * Created by niels on 3/16/2017.
  */
 var lastsearch = "landscape";
+var latitude;
+var longitude;
 
 var getphotohtml = function (photo, size) {
     imageurl = 'https://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_' + size + '.jpg';
@@ -55,9 +57,30 @@ var goback = function (e) {
     $('header').html('<input type="text" title="search" name="search" id="search"><button id="searchbutton">search</button>');
 };
 
-var geoloaction = function (e) {
+var geolocation = function (e) {
     e.preventDefault();
-    //ajax.js call
+    $('.content').html("<div id='map'></div>");
+    $('h1').html("location image");
+    getimagelocation($(this).data("photoid"),showgeolocation);
+};
+
+var showgeolocation = function (data) {
+    latitude = parseFloat(data.photo.location.latitude);
+    longitude = parseFloat(data.photo.location.longitude);
+    initMap();
+};
+
+var initMap = function() {
+    var plaats = {lat: latitude, lng: longitude};
+    console.log(plaats);
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: plaats
+    });
+    var marker = new google.maps.Marker({
+        position: plaats,
+        map: map
+    });
 };
 
 var fromauthor = function (e) {
@@ -78,7 +101,7 @@ $(document).ready(function () {
         }
     })
         .on('click','.back',goback)
-        .on('click','.location',geoloaction)
+        .on('click','.location',geolocation)
         .on('click','.author',fromauthor)
     ;
     getimages("landscape", toonzoekresultaten);

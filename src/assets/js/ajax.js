@@ -51,6 +51,7 @@ var flickrajax = function (gegevens, callback){
             callback(data);
         }
         else {
+            console.log(data);
             console.log("ERROR: bad responce from flickr");
         }
     }).fail(function (jqXHR, textStatus, errorThrown) {
