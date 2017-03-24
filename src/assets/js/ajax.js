@@ -1,6 +1,5 @@
 /**
  * Created by niels on 3/16/2017.
- *
  */
 
 var getimages = function (zoekterm, callback) {
