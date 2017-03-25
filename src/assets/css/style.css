@@ -45,9 +45,7 @@ h1 {
     text-align: center;
 }
 
-.back {
-    width: 15%;
-}
+
 
 h1, #search {
     float: left;
@@ -58,7 +56,7 @@ h1, #search {
     background-color: #EBF2FA;
 }
 
-.back, #searchbutton {
+.backtodetail,.backtosearch, #searchbutton {
     float: right;
     width: 15%;
     margin-right: 0;
