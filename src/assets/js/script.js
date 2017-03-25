@@ -65,7 +65,7 @@ var gobacktodetail = function (e) {
 
 var geolocation = function (e) {
     e.preventDefault();
-    $('.content').html("<div id='map'><p>Location not avaible</p></div>");
+    $('.content').html("<div id='map'></div>");
     $('header').html("<h1>Location of image: "+$(this).data("title")+"</h1>"+"<button class='backtodetail'>back</button>");
     getimagelocation($(this).data("photoid"),showgeolocation);
 };
@@ -80,7 +80,7 @@ var initMap = function() {
     var place = {lat: latitude, lng: longitude};
     console.log(place);
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
+        zoom: 6,
         center: place
     });
     var marker = new google.maps.Marker({

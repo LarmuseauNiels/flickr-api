@@ -45,7 +45,10 @@ h1 {
     text-align: center;
 }
 
-
+h2 {
+    font-size: 3rem;
+    margin-top: 200px;
+}
 
 h1, #search {
     float: left;
@@ -70,9 +73,10 @@ h1, #search {
 }
 
  #map {
-     width: 100%;
-     height: 400px;
-     background-color: grey;
+     margin-left: auto;
+     margin-right: auto;
+     width: 80%;
+     height: 800px;
  }
 
 
