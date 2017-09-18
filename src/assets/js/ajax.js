@@ -57,4 +57,3 @@ var flickrajax = function (gegevens, callback){
         console.log("ERROR: no responce from flickr");
     });
 };
-
