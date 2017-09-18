@@ -49,9 +49,13 @@ var flickrajax = function (gegevens, callback){
         if (data.stat === "ok") {
             callback(data);
         }
+        else if(data.message === "Photo has no location information.") {
+            $('#map').html( "<h2>Photo has no location information.</h2>");
+        }
         else {
-            console.log(data);
             console.log("ERROR: bad responce from flickr");
+            console.log(data);
+
         }
     }).fail(function (jqXHR, textStatus, errorThrown) {
         console.log("ERROR: no responce from flickr");

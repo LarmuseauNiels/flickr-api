@@ -80,7 +80,7 @@ var initMap = function() {
     var place = {lat: latitude, lng: longitude};
     console.log(place);
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
+        zoom: 6,
         center: place
     });
     var marker = new google.maps.Marker({
