@@ -1,7 +1,0 @@
-flickr API key:
-b88c47533062084da794e0f0f815503e
-Secret:
-7fb4e89d76f7e027
-
-content_copy
-AIzaSyCbRUlGDNB-U-65dvJQ3ic5Gz4yq7qBwtU
